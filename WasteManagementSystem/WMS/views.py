@@ -5,7 +5,5 @@ def home(request):
 def about(request):
     return render(request,'about.html')
 def Complaint(request):
-    return render(request,'complaint.html', {})
-    
-    
+    return render(request,'complaint.html')
 # Create your views here.
