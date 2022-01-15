@@ -63,3 +63,17 @@
     border: 10px  black;
     border-style:inset;
 }
+#carouselExampleDark{
+    height:500px;
+}
+.breadcrumbs{
+    font-size:25px;
+    margin: 20px;
+    color:green;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.ComplainContainer{
+    font-size: 40px;
+    margin: 40px;
+    color: green;
+}
