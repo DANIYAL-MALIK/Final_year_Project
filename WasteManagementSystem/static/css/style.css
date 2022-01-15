@@ -1,0 +1,65 @@
+.mainlogo{
+    width:150px;
+    height:100px;
+}
+.navheading{
+    font-size: 20px;
+    margin-left: 100px;
+}
+.navitem{
+    padding-left: 20px;
+    font-weight: bolder;
+    font-family: "Anton";
+}
+.pageheading{
+    font-size: 50px;
+    margin: 50px;
+    text-align: center;
+}
+.imageContainer{
+    margin-top: 20px;
+    font-family: 'Otomanopee One', sans-serif;
+    margin-bottom: 20px;
+    background-color: #cccccc;
+    text-align: center;
+    color: wheat;
+    background-color:green;
+    font-size: 30px;
+    padding: 20px;
+}
+.footer-data{
+    padding: 50px;
+    color: aliceblue;
+}
+.footer-hr{
+    height: 10px; 
+    color:white;
+}
+.footer-link{
+    color: white;
+    font-size: 20px;
+    margin: 20px;
+}
+.LoginBody{
+    padding-top: 3rem;
+    background: url(./images/login/login\ background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+#loginContainer{
+    background-color: green;
+    width: 400px;
+    height: 600px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    border: 10px  black;
+    border-style:inset;
+}
+#signupContainer{
+    background-color: green;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    border: 10px  black;
+    border-style:inset;
+}
