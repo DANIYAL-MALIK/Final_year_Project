@@ -41,8 +41,8 @@
     margin: 20px;
 }
 .LoginBody{
-    padding-top: 3rem;
-    background: url(./images/login/login\ background.jpg);
+    padding-top: 1rem;
+    background-image: url( "{% static 'img/loginbackground.jpg' %}");
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -51,15 +51,12 @@
     background-color: green;
     width: 400px;
     height: 600px;
-    margin-top: 150px;
-    margin-bottom: 150px;
     border: 10px  black;
+    margin-bottom: 20px;
     border-style:inset;
 }
 #signupContainer{
     background-color: green;
-    margin-top: 150px;
-    margin-bottom: 150px;
     border: 10px  black;
     border-style:inset;
 }

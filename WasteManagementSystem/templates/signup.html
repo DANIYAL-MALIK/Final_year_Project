@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!--Font Awesome-->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <!--Style Sheet-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!--Chrome Tab Picture-->
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Sign up | Waste Management System</title>
+    <link rel="shortcut icon" href="./images/logo-removebg-preview.png" />
+  </head>
+  <body>
+    <div class="container" style="width: 250px">
+        <img
+        class="card-img-top"
+        src="{% static 'img/logo.png' %}"
+        alt="Card image cap"
+      />
+    </div>
+    <!--Form-->
+    <div
+      class="container"
+      id="signupContainer"
+      style="font-family: 'Times New Roman', Times, serif; color: honeydew"
+    >
+      <h1
+        style="
+          text-align: center;
+          color: honeydew;
+          font-size: 40px;
+          margin: 20px;
+          font-family: 'Times New Roman', Times, serif;
+        "
+      ><i class="fa fa-user-plus" aria-hidden="true"> Sign Up to Waste Management System</i>
+      </h1>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputFirstname">First name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputFirstname"
+              placeholder="First Name"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputLastname">Last name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputPassword4"
+              placeholder="Last name"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail4"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword4"
+              placeholder="Password"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="inputAddress2"
+            placeholder="Apartment, studio, or floor"
+          />
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity" />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">Area</label>
+            <select id="inputState" class="form-control">
+              <option selected>Badami Bagh</option>
+              <option>Shadbagh</option>
+              <option>Ravi Road</option>
+              <option>Sabzi Mandi</option>
+              <option>Sant Nagar</option>
+              <option>Gullberg</option>
+              <option>Kot Lakhpat</option>
+              <option>Makhan Pura</option>
+              <option>Iqbal Town</option>
+              <option>Township</option>
+              <option>Shalamar Town</option>
+              <option>Shadman</option>
+              <option>Cantonament</option>
+              <option>Timber Market</option>
+              <option>Bilal Gunj</option>
+              <option>Farooq Gunj</option>
+              <option>Delhi Gate</option>
+              <option>Yakki Gate</option>
+              <option>Taxali</option>
+              <option>Akbari Mandi</option>
+              <option>GawalMandi</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" class="form-control" id="inputZip" />
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style="margin-bottom: 20px"
+        >
+          <i class="fa fa-user-plus" aria-hidden="true"> Create Account</i>
+        </button>
+      </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
