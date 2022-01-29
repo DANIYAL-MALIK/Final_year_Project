@@ -11,5 +11,7 @@ def Login(request):
 def Signup(request):
     return render(request, 'signup.html')
 def Services(request):
-    return render(request,'services.html')    
+    return render(request,'services.html')  
+def Contact(request):
+    return render(request,'contact.html')  
 # Create your views here.

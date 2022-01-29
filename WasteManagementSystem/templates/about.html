@@ -7,7 +7,7 @@
     <!--Tab Logo-->
     <link rel="shortcut icon" href="{% static 'img/logo.png' %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Waste Management System</title>
+    <title>About | Waste Management System</title>
     <!--Style.CSS-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!--Bootstrap-->
@@ -15,7 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
 </head>
 <body>
     <!--Navbar-->
@@ -56,7 +55,7 @@
             >
           </li>
           <li class="nav-item navitem">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="{% url 'services' %}"
               ><i class="fab fa-servicestack"></i> Our Services</a
             >
           </li>
@@ -71,10 +70,43 @@
           </li>
         </ul>
       </div>
-      <a href="" style="margin-right: 20px;"><button type="button" class="btn btn-success"><i class="fa fa-sign-in" aria-hidden="true"></i>          Login</button></a>
-      <a href="./signup.html" style="margin-right: 20px;"><button type="button" class="btn btn-success"><i class="fa fa-user-plus" aria-hidden="true"></i>          Sign up</button></a>
     </div>
   </nav>
+  <!--Internal Page-->
+  <div class="container">
+    <h1 style="text-align: center; color: #00ff00; margin: 20px; font-size: 50px;">Our Team</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="img-scontainer" style="border-radius:50px; border:4px solid #00ff00; padding: 20px;margin: 30px;">
+            <a href="">
+            <img src="{% static 'img/member.png' %}" alt="..." class="img-thumbnail">
+            </a>
+            <h2 style="text-align: center;">Daniyal Malik</h2>
+            <h5 style="text-align: center;">Full Stack Developer</h5>
+    </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="img-scontainer" style="border-radius:50px; border:4px solid #00ff00; padding: 20px;margin: 30px;">
+            <a href="">
+            <img src="{% static 'img/member.png' %}" alt="..." class="img-thumbnail">
+            </a>
+            <h2 style="text-align: center;">Umair Ahmad</h2>
+            <h5 style="text-align: center;">Back-end Developer</h5>
+    </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="img-scontainer" style="border-radius:50px; border:4px solid #00ff00; padding: 20px;margin: 30px;">
+            <a href="">
+            <img src="{% static 'img/member.png' %}" alt="..." class="img-thumbnail">
+            </a>
+            <h2 style="text-align: center;">Umair Khalid</h2>
+            <h5 style="text-align: center;">Front-end Developer</h5>
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
         <!--Footer-->
         <div class="container-fluid" style="background-color: green">
             <div class="row">

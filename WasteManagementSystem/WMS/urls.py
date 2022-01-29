@@ -6,5 +6,6 @@ urlpatterns = [
     path("complaint/",views.Complaint, name="complaint"),
     path("login/",views.Login, name="login"),
     path("signup/",views.Signup,name="Signup"),
-    path("services/",views.Services, name="services")
+    path("services/",views.Services, name="services"),
+    path('contact/',views.Contact,name="contact")
 ]
