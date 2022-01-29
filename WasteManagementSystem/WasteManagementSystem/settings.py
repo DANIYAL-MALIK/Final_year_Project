@@ -99,3 +99,5 @@ STATICFILES_DIRS=[str(BASE_DIR.joinpath('static'))]
 #STATICFILES_FINDERS=[
  #   "django.contrib.staticfiles.finders.FilesystemFinder",
   #  'django.contrib.staticfiles.finders.AppDirectoriesFinder',]
+LOGIN_REDIRECT_URL='home'
+LOGOUT_REDIRECT_URL='home'
