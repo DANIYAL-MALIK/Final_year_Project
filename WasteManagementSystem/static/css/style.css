@@ -81,3 +81,10 @@
     margin:10px;
     margin-bottom:25px;
 }
+.img-scontainer{
+    border:2px solid black;
+}
+.img-scontainer h2{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}

@@ -10,6 +10,6 @@ def Login(request):
     return render(request, 'login.html')
 def Signup(request):
     return render(request, 'signup.html')
-    
-    
+def Services(request):
+    return render(request,'services.html')    
 # Create your views here.
