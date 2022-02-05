@@ -18,6 +18,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'WMS.apps.WmsConfig',
+    'crispy_forms',
+    'users.apps.UsersConfig'
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -101,3 +103,4 @@ STATICFILES_DIRS=[str(BASE_DIR.joinpath('static'))]
   #  'django.contrib.staticfiles.finders.AppDirectoriesFinder',]
 LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL='home'
+CRISPY_TEMPLATE_PACK='bootstrap4'

@@ -6,8 +6,9 @@ def about(request):
     return render(request,'about.html')
 def Complaint(request):
     return render(request,'complaint.html')
-def Login(request):
+#def Login(request):
     return render(request, 'login.html')
+    model=User
 def Signup(request):
     return render(request, 'signup.html')
 def Services(request):
