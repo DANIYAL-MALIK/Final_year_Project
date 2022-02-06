@@ -127,31 +127,38 @@
         </div>
         <!--Complaint Form-->
         <div class="col-md-6 col-sm-12">
-            <form action="" method="post" style="background-color:#00ff00; color: white;border: 2px solid black; border-radius: 8px; margin: 20px;">
-              <h2 style="text-align: center; margin: 20px;">Online Complaint</h2>
-              <div class="CC">
-                <input type="text" class="form-control" id="Cname" placeholder="Name">
-                <input type="email" class="form-control" id="Cemail" placeholder="name@example.com">  
-                <input type="text" class="form-control" id="Cphone" placeholder="03XX-XXXXXXX">  
-                <input type="text" class="form-control" id="Caddress" placeholder="Complete Address">  
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1"><h4>Select your Area Zone</h4></label>
-                  <select class="form-control" id="Czone">
-                    <option>Ravi Zone</option>
-                    <option>Shalamar Zone</option>
-                    <option>Aziz Bhatti Zone</option>
-                    <option>Data Ganj Bukhsh Zone</option>
-                    <option>Samanabad Zone</option>
-                    <option>Gulberg Zone</option>
-                    <option>Wahga Zone</option>
-                    <option>Allama Iqbal Zone</option>
-                    <option>Nishtar Zone</option>
-                  </select>
-                </div>  
-                <textarea id="complain" rows="4" cols="45" placeholder="Enter your complaint here"></textarea>
-                <button type="button" onclick="check()" class="btn btn-danger">Send Complain</button> 
-              </div>
-            </form>
+          {% if user.is_authenticated %}
+          <form action="" method="post" style="background-color:#00ff00; color: white;border: 2px solid black; border-radius: 8px; margin: 20px;">
+            <h2 style="text-align: center; margin: 20px;">Online Complaint</h2>
+            <div class="CC">
+              <input type="text" class="form-control" id="Cname" placeholder="Name">
+              <input type="email" class="form-control" id="Cemail" placeholder="name@example.com">  
+              <input type="text" class="form-control" id="Cphone" placeholder="03XX-XXXXXXX">  
+              <input type="text" class="form-control" id="Caddress" placeholder="Complete Address">  
+              <div class="form-group">
+                <label for="exampleFormControlSelect1"><h4>Select your Area Zone</h4></label>
+                <select class="form-control" id="Czone">
+                  <option>Ravi Zone</option>
+                  <option>Shalamar Zone</option>
+                  <option>Aziz Bhatti Zone</option>
+                  <option>Data Ganj Bukhsh Zone</option>
+                  <option>Samanabad Zone</option>
+                  <option>Gulberg Zone</option>
+                  <option>Wahga Zone</option>
+                  <option>Allama Iqbal Zone</option>
+                  <option>Nishtar Zone</option>
+                </select>
+              </div>  
+              <textarea id="complain" rows="4" cols="45" placeholder="Enter your complaint here"></textarea>
+              <button type="button" onclick="check()" class="btn btn-danger">Send Complain</button> 
+            </div>
+          </form>
+          {% else %}
+          <h1 style="color: #00ff00;">You need to login before sending complaint</h1>
+          <a href="{% url 'login' %}"><button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 30px;font-size: 20px;"><i class="fa fa-sign-in" aria-hidden="true"> Log In</i></button></a>
+          <a href="{% url 'register' %}"><button type="submit" class="btn btn-primary btn-lg btn-block" style="margin-top: 30px;font-size: 20px;"><i class="fa fa-user-plus" aria-hidden="true"> SignUp</i></button></a>
+          {% endif %}
+            
         </div>
       </div>
     </div>
