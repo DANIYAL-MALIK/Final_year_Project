@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load crispy_forms_tags %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -128,9 +129,10 @@
         <!--Complaint Form-->
         <div class="col-md-6 col-sm-12">
           {% if user.is_authenticated %}
-          <form action="" method="post" style="background-color:#00ff00; color: white;border: 2px solid black; border-radius: 8px; margin: 20px;">
+          <form action="" method="post" style=" border: 2px solid black; border-radius: 8px; margin: 20px; padding:30px">
+            {% csrf_token %}
             <h2 style="text-align: center; margin: 20px;">Online Complaint</h2>
-            <div class="CC">
+            <!--<div class="CC">
               <input type="text" class="form-control" id="Cname" placeholder="Name">
               <input type="email" class="form-control" id="Cemail" placeholder="name@example.com">  
               <input type="text" class="form-control" id="Cphone" placeholder="03XX-XXXXXXX">  
@@ -151,7 +153,9 @@
               </div>  
               <textarea id="complain" rows="4" cols="45" placeholder="Enter your complaint here"></textarea>
               <button type="button" onclick="check()" class="btn btn-danger">Send Complain</button> 
-            </div>
+            </div>-->
+            {{form | crispy}}
+            <button class="btn btn-outline-info" type="submit"><i class="fas fa-mail-bulk"> Send Complaint</i></button>
           </form>
           {% else %}
           <h1 style="color: #00ff00;">You need to login before sending complaint</h1>

@@ -7,7 +7,7 @@
     <!--Tab Logo-->
     <link rel="shortcut icon" href="{% static 'img/logo.png' %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Waste Management System</title>
+    <title>Waste Collection | Services | Waste Management System</title>
     <!--Style.CSS-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!--Bootstrap-->
@@ -71,68 +71,40 @@
       </div>
     </div>
   </nav>
+  <div class="conatiner">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumbs">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'services' %}">Services</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Waste Collection        </li>
+      </ol>
+    </nav>
+  </div>
 <!--Internal body-->
 <div class="conatiner">
-    <h1 style="text-align: center; color: #00ff00; margin: 20px; font-size: 50px;">Our Services</h1>
+    <h1 style="text-align: center; color: #00ff00; margin: 20px; font-size: 40px;">Waste Collection</h1>
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="img-scontainer" style="border:4px solid #00ff00; padding: 20px;margin: 30px;">
-                    <a href="{% url  'mechanicalSweeping' %}">
-                        <h2 style="text-align: center;">Mechanical Sweeping</h2>
-                    <img src="{% static 'img/Mechanical Sweeping.jpg' %}" alt="..." class="img-thumbnail">
-                    </a>
-            </div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <div class="img-scontainer" style="border:4px solid #00ff00; padding: 20px;margin: 30px;">
-                    <a href="{% url 'wasteCollection' %}">
+                    <a href="{% url  'wasteCollection' %}">
                         <h2 style="text-align: center;">Waste Collection</h2>
                     <img src="{% static 'img/WasteCollection.jfif' %}" alt="..." class="img-thumbnail">
                     </a>
             </div>
             </div>
-        </div>
-        <!--Row2-->
-        <div class="row">
             <div class="col-sm-12 col-md-6">
                 <div class="img-scontainer" style="border:4px solid #00ff00; padding: 20px;margin: 30px;">
-                    <a href="{% url 'mechanicalWashing' %}">
-                        <h2 style="text-align: center;">Mechanical Washing</h2>
-                    <img src="{% static 'img/Mechanical Washing.jpg' %}" alt="..." class="img-thumbnail">
-                    </a>
-            </div>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <div class="img-scontainer" style="border:4px solid #00ff00; padding: 20px;margin: 30px;">
-                    <a href="">
-                        <h2 style="text-align: center;">Manual Sweeping</h2>
-                    <img src="{% static 'img/WasteCollection.jfif' %}" alt="..." class="img-thumbnail">
-                    </a>
-            </div>
+                <h2 style="text-align: center; color:#00ff00;">Waste Collection</h2>
+                <h6 style="font-size:20px;">When it comes to collecting, sorting and transporting waste, a distinction is made between systematic and systemless approaches. The kirbside collection of bundled waste paper is an example of the latter. On the other hand various container systems are used for waste collection. Whereas residual waste is collected in gray containers, separate collection systems are used for a range of waste.
+                    Various container systems and vehicles are used for waste collection and transport, depending on the type of waste involved, whereby a distinction is made between systematic and systemless waste collection.
+                </h6>
+                </div>
             </div>
         </div>
-        <!--Row 3-->
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-              <div class="img-scontainer" style="border:4px solid #00ff00; padding: 20px;margin: 30px;">
-                  <a href="">
-                      <h2 style="text-align: center;">Mechanical Sweeping</h2>
-                  <img src="{% static 'img/Mechanical Sweeping.jpg' %}" alt="..." class="img-thumbnail">
-                  </a>
-          </div>
-          </div>
-          <div class="col-sm-12 col-md-6">
-              <div class="img-scontainer" style="border:4px solid #00ff00; padding: 20px;margin: 30px;">
-                  <a href="">
-                      <h2 style="text-align: center;">Waste Collection</h2>
-                  <img src="{% static 'img/WasteCollection.jfif' %}" alt="..." class="img-thumbnail">
-                  </a>
-          </div>
-          </div>
-      </div>
     </div>
-</div>
+        <!--Row2-->
 <!--Footer-->
         <div class="container-fluid" style="background-color: green">
             <div class="row">
@@ -208,20 +180,19 @@
                 <address style="text-align:left; color: white; font-size: 20px">
                     Government Islamia Graduate College Civilines H8F3+8CW, St Nagar, Lahore,
                     Punjab 54000
-                  </address>  
-              </div>
-              <hr style="height: 5px; color: white" />
-              <div class="col-12" style="text-align: center; color: aliceblue; font-style: italic;font-size: 20px;">
-                  <p>Design and Develop by Group 2 (Daniyal Malik, Umair Ahmad, Umair Khalid) <br>
+                    </address>  
+                </div>
+                <hr style="height: 5px; color: white" />
+                <div class="col-12" style="text-align: center; color: aliceblue; font-style: italic;font-size: 20px;">
+                    <p>Design and Develop by Group 2 (Daniyal Malik, Umair Ahmad, Umair Khalid) <br>
                 Copyright &copy; Group-2 2022</p>
-              </div>
+                </div>
             </div>
-          </div>
-          <!-- Optional JavaScript; choose one of the two! -->
-          <!-- Option 1: Bootstrap Bundle with Popper -->
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-          <!--
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>-->    
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>-->    
 </body>
 </html>
