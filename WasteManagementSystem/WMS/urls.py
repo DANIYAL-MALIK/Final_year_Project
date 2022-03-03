@@ -1,9 +1,10 @@
 from django.urls import path
 from . import views
-from .views import RequestCreateView,RequestDetailView
+from .views import RequestCreateView,RequestDetailView,RequestListView
 urlpatterns = [
     path("",views.home, name="home"),
     path("about/", views.about, name="about"),
+    path("complaint/list",RequestListView.as_view(), name="CompList"),
     path("complaint/",RequestCreateView.as_view(), name="complaint"),
     path("complaint/<int:pk>/",RequestDetailView.as_view(), name="request_detail"),
     path("services/mechanicalSweeping",views.MechanicalSweeping, name="mechanicalSweeping"),

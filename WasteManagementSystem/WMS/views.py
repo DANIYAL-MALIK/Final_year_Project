@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import CreateView,DetailView
+from django.views.generic import CreateView,DetailView,ListView
 from .models import Request
 def home(request):
     return render(request, 'home.html',)
@@ -33,3 +33,10 @@ class RequestCreateView(CreateView):
 class RequestDetailView(DetailView):
     model=Request
     template_name='request_detail.html'
+class RequestListView(ListView):
+    model=Request
+    context={
+        'requests':Request.objects.all()
+    }
+    template_name="CompList.html"
+    ordering=['-date_posted']
