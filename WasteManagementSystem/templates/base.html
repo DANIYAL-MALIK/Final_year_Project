@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--Tab Logo-->
-    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" />
+    <link rel="shortcut icon" href="{% static 'img/wm.svg' %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Style.CSS-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -19,12 +19,12 @@
     <!--Navbar-->
     <nav
     class="navbar navbar-expand-lg navbar-light"
-    style="background-color: #00ff00"
+    style="background-color: white; color:#00ff00"
   >
     <div class="container-fluid">
       <a class="navbar-brand" href="{% url 'home' %}">
         <img
-          src=" {% static 'img/mainlog.png' %}" 
+          src=" {% static 'img/wm.svg' %}" 
           alt=""
           width="140"
           height="100"
@@ -78,7 +78,7 @@
         <a href="{% url 'logout' %}"><button type="button" class="btn btn-primary" style="margin: 20px;">Logout</button></a>
         {% else %}
         <a href="{% url 'login' %}" style="margin-right: 20px;"><button type="button" class="btn btn-success"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button></a>
-        <a href="{% url 'register' %}" style="margin-right: 20px;"><button type="button" class="btn btn-success"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</button></a>
+        <a href="{% url 'register' %}" style="margin-right: 20px;"><button type="button" class="btn btn-warning"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</button></a>
         {% endif %}        
     </div>
     </nav>
