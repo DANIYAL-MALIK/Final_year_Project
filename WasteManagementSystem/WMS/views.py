@@ -8,9 +8,6 @@ def about(request):
     return render(request,'about.html')
 def Complaint(request):
     return render(request,'complaint.html')
-#def Login(request):
-    return render(request, 'login.html')
-    model=User
 def Signup(request):
     return render(request, 'signup.html')
 def Services(request):
@@ -26,17 +23,32 @@ def MechanicalWashing(request):
 
 
 # Create your views here.
+
+
 class RequestCreateView(CreateView):
     model=Request
     template_name="complaint.html"
     fields=['name','email','phone','address','zone','complaint','image','date_posted']
+
+
 class RequestDetailView(DetailView):
     model=Request
     template_name='request_detail.html'
+
+
 class RequestListView(ListView):
-    model=Request
-    context={
-        'requests':Request.objects.all()
-    }
-    template_name="CompList.html"
-    ordering=['-date_posted']
+    model = Request
+    template_name = "CompList.html"
+    ordering = ['-date_posted']
+
+    def get_queryset(request):
+        return Request.objects.all()
+
+
+class RequestByZoneListView(ListView):
+    model = Request
+    template_name = "CompList.html"
+    ordering = ['-date_posted']
+
+    def get_queryset(request):
+        return Request.objects.filter(zone=request.user.zone)
