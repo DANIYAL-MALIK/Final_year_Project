@@ -15,6 +15,7 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>{% block title %} WMS {% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 </head>
 <body>
@@ -80,12 +81,17 @@
               <a class="nav-link" href="{% url 'ManagerCompList' %}">
                 <i class="fas fa-address-book"></i>Complaints</a>
             </li>
+          <li class="nav-item navitem">
+              <a class="nav-link" href="{% url 'ContactList' %}">
+                <i class="fas fa-envelope"> Messages</i></a>
+            </li>
+
 
           {% endif %}
         </ul>
         </div>
         {% if user.is_authenticated %}
-        <h4 style="color: black">Hi {{ user.username }} !</h4>
+        <h5 style="color: black">{{ user.username }}</h5>
         <a href="{% url 'logout' %}"><button type="button" class="btn btn-primary" style="margin: 20px;">Logout</button></a>
         {% else %}
         <a href="{% url 'login' %}" style="margin-right: 20px;"><button type="button" class="btn btn-success"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</button></a>

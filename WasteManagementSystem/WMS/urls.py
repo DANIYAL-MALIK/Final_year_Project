@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from .views import RequestCreateView, RequestDetailView, RequestListView, RequestByZoneListView, InProgressView, \
-    ResolvedView
+    ResolvedView, ContactCreateView, ContactListView
 
 urlpatterns = [
     path("", views.home, name="home"),
@@ -19,5 +19,7 @@ urlpatterns = [
     # path("login/",views.Login, name="login"),
     # path("signup/",views.Signup,name="Signup"),
     path("services/", views.Services, name="services"),
-    path('contact/', views.Contact, name="contact")
+    path('contact/', ContactCreateView.as_view(), name="contact"),
+    path("messages/list", ContactListView.as_view(), name="ContactList"),
+
 ]

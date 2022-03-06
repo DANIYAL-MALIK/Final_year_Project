@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views import View
 from django.views.generic import CreateView, DetailView, ListView
-from .models import Request, Manager
+from .models import Request, Manager,Contact
 
 
 def home(request):
+
     return render(request, 'home.html', )
 
 
@@ -25,8 +26,6 @@ def Services(request):
     return render(request, 'services.html')
 
 
-def Contact(request):
-    return render(request, 'contact.html')
 
 
 def MechanicalSweeping(request):
@@ -92,3 +91,21 @@ class ResolvedView(View):
         comp.status = 'RESOLVED'
         comp.save()
         return redirect('ManagerCompList')
+
+
+class ContactCreateView(CreateView):
+    model = Contact
+    template_name = "contact.html"
+    fields = ['name', 'email', 'zone', 'message', 'date_posted']
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super(ContactCreateView, self).form_valid(form)
+
+class ContactListView(ListView):
+    model = Contact
+    template_name = "Message.html"
+    ordering = ['-date_posted']
+"""
+    def get_queryset(self):
+        return Request.objects.filter(author=self.request.user).order_by('-date_posted')
+"""

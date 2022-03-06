@@ -17,9 +17,9 @@
             <h6 style="margin-top:20px;">Request Status: {{r.status}}</h6>
                 {% if r.status != "RESOLVED" %}
                     {% if r.status == 'PENDING' %}
-                <form method="post" action="{% url 'inprocess' r.pk %}">{% csrf_token %}<button type="submit">In Progress</button></form>
+                <form method="post" action="{% url 'inprocess' r.pk %}">{% csrf_token %}<button style="margin: 20px;"  class="btn btn-warning" type="submit">In Progress</button></form>
                     {% endif %}
-                <form method="post" action="{% url 'resolved' r.pk %}">{% csrf_token %}<button type="submit">Resolved</button></form>
+                <form method="post" action="{% url 'resolved' r.pk %}">{% csrf_token %}<button class="btn btn-success" type="submit">Resolved</button></form>
                 {% endif %}
             </footer>
           </blockquote>
