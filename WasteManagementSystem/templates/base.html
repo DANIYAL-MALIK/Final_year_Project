@@ -14,6 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>{% block title %} WMS {% endblock %}</title>
+
 </head>
 <body>
     <!--Navbar-->
@@ -58,19 +60,28 @@
             <i class="fab fa-servicestack"></i> Our Services</a>
           </li>
           <li class="nav-item navitem">
-            <a class="nav-link" href="{% url 'complaint' %}"><i class="fas fa-user-friends"></i>Online Complaint</a
-            >
-          </li>
-          <li class="nav-item navitem">
             <a class="nav-link" href="{% url 'contact' %}"
                 ><i class="far fa-address-card"></i> Contact</a
             >
             </li>
-            <li class="nav-item navitem">
+
+          {% if user.is_authenticated and not user.isManager %}
+          <li class="nav-item navitem">
+            <a class="nav-link" href="{% url 'complaint' %}"><i class="fas fa-user-friends"></i>Online Complaint</a
+            >
+          </li>
+          <li class="nav-item navitem">
               <a class="nav-link" href="{% url 'CompList' %}"
                 ><i class="fas fa-address-book"></i>Complaints</a
               >
-            </li>  
+            </li>
+          {% elif user.is_authenticated%}
+          <li class="nav-item navitem">
+              <a class="nav-link" href="{% url 'ManagerCompList' %}">
+                <i class="fas fa-address-book"></i>Complaints</a>
+            </li>
+
+          {% endif %}
         </ul>
         </div>
         {% if user.is_authenticated %}

@@ -37,7 +37,7 @@ class Manager(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
 
     def __str__(self):
-        return self.user
+        return self.user.username
 
 
 class DumpArea(models.Model):
@@ -76,18 +76,16 @@ class Vehicle(models.Model):
 
 class Request(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    name = models.CharField(max_length=20, null=False, default="user")
-    email = models.EmailField(max_length=40, null=True)
     phone = models.CharField(max_length=15, blank=False, default=" ")
     address = models.CharField(max_length=400, null=False)
     zone = models.CharField(choices=ZONE_CHOICES, max_length=50, blank=False, null=False)
     status = models.CharField(choices=STATUS_CHOICES, max_length=20, blank=False, null=False, default='PENDING')
     complaint = models.TextField(blank=False, null=False)
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
+    image = models.ImageField(default='profile_pics/default.jpg', upload_to='profile_pics/')
     date_posted = models.DateTimeField(default=datetime.now, null=False)
 
     def __str__(self):
-        return self.name
+        return self.zone + ' - ' + self.author.username
 
     def get_absolute_url(self):
         return reverse("request_detail", args=[str(self.id)])
