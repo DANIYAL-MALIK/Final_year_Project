@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} Add a Vehicle | WMS {% endblock %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!--BreadCrumb-->
+    <div class="conatiner">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumbs">
+          <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'managerPanel' %}">Manager Panel</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+            Add a vehicle
+          </li>
+        </ol>
+      </nav>
+    </div>
+<div class="container" style="width: 600px;">
+            <form action="" method="post" enctype="multipart/form-data" style=" border: 2px solid black; border-radius: 8px; margin: 20px; padding:30px">
+              {% csrf_token %}
+              <h2 style="text-align: center; margin: 20px;">Add a vehicle</h2>
+              {{form | crispy}}
+              <button class="btn btn-warning" type="submit"><i class="fas fa-truck">  Add a vehicle</i></button>
+            </form>
+    </div>
+{% endblock %}

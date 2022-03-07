@@ -70,6 +70,8 @@ class Vehicle(models.Model):
     brand = models.CharField(max_length=150)
     model_no = models.CharField(max_length=50)
     manager_id = models.ForeignKey(Manager, on_delete=models.CASCADE, null=True)
+    def get_absolute_url(self):
+        return reverse("managerPanel")
 
     def __str__(self):
         return self.name

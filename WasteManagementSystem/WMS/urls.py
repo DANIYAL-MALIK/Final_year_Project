@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from .views import RequestCreateView, RequestDetailView, RequestListView, RequestByZoneListView, InProgressView, \
-    ResolvedView, ContactCreateView, ContactListView
+    ResolvedView, ContactCreateView, ContactListView, AddVehicle
 from django.contrib import admin
 admin.site.site_header="Waste Management System"
 admin.site.site_title="Waste Management System"
@@ -24,6 +24,7 @@ urlpatterns = [
     path("services/", views.Services, name="services"),
     path('contact/', ContactCreateView.as_view(), name="contact"),
     path("messages/list", ContactListView.as_view(), name="ContactList"),
+    path("add-a-vehicle",  AddVehicle.as_view(), name="add-a-vehicle"),
     path("Manager_panel/", views.ManagerPanel, name="managerPanel"),
 
 ]

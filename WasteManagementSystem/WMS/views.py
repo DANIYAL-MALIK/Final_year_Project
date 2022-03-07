@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from django.views.generic import CreateView, DetailView, ListView
-from .models import Request, Manager,Contact
+from .models import Request, Manager,Contact,Vehicle
 
 
 def home(request):
@@ -109,6 +109,14 @@ class ResolvedView(View):
         comp.status = 'RESOLVED'
         comp.save()
         return redirect('ManagerCompList')
+
+class AddVehicle(CreateView):
+    model=Vehicle
+    template_name="AddVehicle.html"
+    fields=['name','number','size','color','brand','model_no']
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super(AddVehicle, self).form_valid(form)
 
 
 class ContactCreateView(CreateView):
