@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+  Message Board | Waste Management System
+{% endblock title %}
+{% block content %}
+<div class="container" style="margin-top:30px;">
+    <h1 style="text-align:center; margin:20px; color:greenyellow;">Message Board</h1>
+    {% for m in object_list %}
+    <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+         <p><i class="far fa-user-alt"> {{m.name}}</i></p>
+                    <p style="margin-left:100px;"><i class="fal fa-clock"> {{m.date_posted}}</i></p>
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+          <p>Zone: {{m.zone}}</p>
+          <p><i class="fas fa-envelope">   {{m.email}}</i></p>
+        <p>{{m.message}}</p>
+      </div>
+    </div>
+  </div>
+ </div>
+    {%endfor%}
+</div>
+{% endblock content %}

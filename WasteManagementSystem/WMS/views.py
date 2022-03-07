@@ -1,13 +1,32 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from django.views.generic import CreateView, DetailView, ListView
 from .models import Request, Manager,Contact
 
 
 def home(request):
-
-    return render(request, 'home.html', )
+    a_list=Request.objects.all()
+    r=0
+    p=0
+    pend=0
+    t=0
+    tot=len(a_list)
+    for s in a_list:
+        if s.status=='PENDING':
+            pend+=1
+        elif s.status=='RESOLVED':
+            r+=1
+        elif s.status=="PROCESSING":
+          p+=1
+    context={
+        'pending':pend,
+        'resolved':r,
+        'process':p,
+        'total':tot,
+    }
+    return render(request, 'home.html',context )
 
 
 def about(request):
@@ -42,11 +61,10 @@ def MechanicalWashing(request):
 
 # Complaints Views
 
-class RequestCreateView(CreateView):
+class RequestCreateView(LoginRequiredMixin,CreateView):
     model = Request
     template_name = "complaint.html"
     fields = ['phone', 'address', 'zone', 'complaint', 'image', 'date_posted']
-
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super(RequestCreateView, self).form_valid(form)
@@ -72,7 +90,7 @@ class RequestByZoneListView(ListView):
 
     def get_queryset(self):
         manager = Manager.objects.get(user=self.request.user)
-        return Request.objects.filter(zone=manager.zone)
+        return Request.objects.filter(zone=manager.zone).order_by('-date_posted')
 
 
 class InProgressView(View):

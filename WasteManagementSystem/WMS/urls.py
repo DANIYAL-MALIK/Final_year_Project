@@ -2,7 +2,10 @@ from django.urls import path
 from . import views
 from .views import RequestCreateView, RequestDetailView, RequestListView, RequestByZoneListView, InProgressView, \
     ResolvedView, ContactCreateView, ContactListView
-
+from django.contrib import admin
+admin.site.site_header="Waste Management System"
+admin.site.site_title="Waste Management System"
+admin.site.index_title="ADMIN PANEL"
 urlpatterns = [
     path("", views.home, name="home"),
     path("about/", views.about, name="about"),

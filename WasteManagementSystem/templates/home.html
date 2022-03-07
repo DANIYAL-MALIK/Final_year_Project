@@ -55,14 +55,14 @@
         <h1>Make the World more greener with us</h1>
         <button
           type="button"
-          class="btn"
+          class="btn btn-primary"
           style="
             background-color: #00ff00;
             color: aliceblue;
             font-family: Anton;
           "
         >
-          <h5>Contact us</h5>
+          <a href="{% url 'contact' %}"><h5>Contact us</h5></a>
         </button>
       </div>
     </div>
@@ -78,6 +78,22 @@
       </div>
     </div>
   </div>
+</div>
+<div class="container" style="margin-top:40px;">
+  <div class="row"  style="font-family: 'Playfair Display', serif; margin-top:20px;">
+  <div class="col-6 col-md-3" style="background-color: red;  color:white; text-align:center;padding:10px; border-radius: 30px; font-size:50px; border: 5px solid yellow;">
+    <h2>No. of Applications issued</h2>
+    {{total}}</div>
+  <div class="col-6 col-md-3" style="background-color: green; color:white; text-align:center;padding:10px; border-radius: 30px; font-size:50px; border: 5px solid green;">
+        <h2>No. of Applications pending</h2>
+    {{pending}}</div>
+  <div class="col-6 col-md-3" style="background-color: blue; color:white; text-align:center;padding:10px; border-radius: 30px; font-size:50px; border: 5px solid yellow;">
+        <h2>No. of Applications in process</h2>
+    {{process}}</div>
+  <div class="col-6 col-md-3" style="background-color: yellow; color:black; text-align:center;padding:10px; border-radius: 30px; font-size:50px; border: 5px solid green;">
+        <h2>No. of Applications Resolved</h2>
+    {{resolved}}</div>
+</div>
 </div>
 <div class="container" style="margin-top: 40px; margin-bottom: 40px; ">
   <div class="row">
