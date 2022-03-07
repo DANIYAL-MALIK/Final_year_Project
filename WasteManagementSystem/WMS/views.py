@@ -127,3 +127,5 @@ class ContactListView(ListView):
     def get_queryset(self):
         return Request.objects.filter(author=self.request.user).order_by('-date_posted')
 """
+def ManagerPanel(request):
+    return render (request, 'ManagerPanel.html')

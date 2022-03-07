@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  Manager Panel | Waste Management System
+{% endblock title %}
+{% block content %}
+<!--<div class="container" style="margin-top: 40px; margin-bottom: 40px; font-size:20px;">
+ <a href="{% url  'ManagerCompList' %}" class="btn btn-primary btn-lg btn-block" style="background-color:red;color:white; font-size:30px;">Complaints</a>
+    <a href="{% url  'ContactList' %}" class="btn btn-primary btn-lg btn-block" style="background-color:yellow;color:black; font-size:30px;">Messages</a>
+
+</div>-->
+<div class="container" style="margin-top: 40px; margin-bottom: 40px;">
+    <div class="row" style="font-size:40px;">
+        <div class="col-sm-12 col-md-6" style="border: 5px solid; text-align:center;padding:10px; color:white; background-color:red; border-radius: 10px;">
+        <a href="{% url  'ManagerCompList' %}"  style="color:white"><i class="far fa-book">
+            Complaints
+        </i></a>
+        </div>
+                <div class="col-sm-12 col-md-6" style="border: 5px solid; text-align:center;padding:10px; color:white; background-color:green; border-radius: 10px;">
+        <a href="{% url  'ContactList' %}"  style="color:white"><i class="fal fa-envelope">
+            Messages
+        </i></a>
+        </div>
+    </div>
+<!--ROW 2 -->
+        <div class="row" style="font-size:40px;color: inherit; text-decoration:none;">
+        <div class="col-sm-12 col-md-6" style="border: 5px solid; text-align:center;padding:10px; color:white; background-color:blue; border-radius: 10px;">
+        <a href="{% url  'ManagerCompList' %}"  style="color:white"><i class="fas fa-truck">
+            Vehicles
+        </i></a>
+        </div>
+                <div class="col-sm-12 col-md-6" style="border: 5px solid; text-align:center;padding:10px; color:white; background-color:yellowgreen; border-radius: 10px;">
+        <a href="{% url  'ContactList' %}"  style="color:white"><i class="fas fa-globe-americas">
+            Places
+        </i></a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

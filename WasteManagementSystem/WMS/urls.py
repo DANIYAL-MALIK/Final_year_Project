@@ -24,5 +24,6 @@ urlpatterns = [
     path("services/", views.Services, name="services"),
     path('contact/', ContactCreateView.as_view(), name="contact"),
     path("messages/list", ContactListView.as_view(), name="ContactList"),
+    path("Manager_panel/", views.ManagerPanel, name="managerPanel"),
 
 ]

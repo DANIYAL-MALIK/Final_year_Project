@@ -6,7 +6,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Playfair+Display&display=swap" rel="stylesheet">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--Tab Logo-->
     <link rel="shortcut icon" href="{% static 'img/wm.svg' %}" />
@@ -82,13 +81,13 @@
             </li>
           {% elif user.is_authenticated%}
           <li class="nav-item navitem">
-              <a class="nav-link" href="{% url 'ManagerCompList' %}">
-                <i class="fas fa-address-book"></i>Complaints</a>
+              <a class="nav-link" href="{% url 'managerPanel' %}">
+                <i class="fas fa-address-book"></i>Manager's Panel</a>
             </li>
-          <li class="nav-item navitem">
+         <!-- <li class="nav-item navitem">
               <a class="nav-link" href="{% url 'ContactList' %}">
                 <i class="fas fa-envelope"> Messages</i></a>
-            </li>
+            </li>-->
 
 
           {% endif %}
@@ -161,17 +160,17 @@
       <div class="col-sm-6 col-md-3 footer-data">
         <h4>QUICK LINKS</h4>
         <hr class="footer-hr" />
-        <a href="./index.html" class="footer-link"
+        <a href="{% url 'home' %}" class="footer-link"
           ><i class="fas fa-home"></i> Home</a
         ><br />
-        <a href="./index.html" class="footer-link"
+        <a href="{% url 'about' %}" class="footer-link"
           ><i class="fas fa-address-book"></i> About</a
         ><br />
-        <a href="./index.html" class="footer-link"
+        <a href="{% url 'services' %}" class="footer-link"
           ><i class="fas fa-home"></i> Services</a
         ><br />
-        <a href="./index.html" class="footer-link"
-          ><i class="fas fa-home"></i> Contact us</a
+        <a href="{% url 'contact' %}" class="footer-link"
+          ><i class="fas fa-address-book"></i> Contact us</a
         ><br />
       </div>
       <div class="col-sm-6 col-md-3 footer-data">
