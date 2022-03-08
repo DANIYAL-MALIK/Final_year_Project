@@ -1,7 +1,8 @@
 from django.urls import path
 from . import views
 from .views import RequestCreateView, RequestDetailView, RequestListView, RequestByZoneListView, InProgressView, \
-    ResolvedView, ContactCreateView, ContactListView, AddVehicle
+    ResolvedView, ContactCreateView, ContactListView, AddVehicle, VehicleleByZoneListView, AssignWorkView, \
+    FreeVehicleView
 from django.contrib import admin
 admin.site.site_header="Waste Management System"
 admin.site.site_title="Waste Management System"
@@ -14,6 +15,8 @@ urlpatterns = [
     path("complaint/", RequestCreateView.as_view(), name="complaint"),
     path("complaint/<int:pk>/", RequestDetailView.as_view(), name="request_detail"),
     path("complaint/status/processing/<int:pk>/", InProgressView.as_view(), name="inprocess"),
+    path("Vehcile/on-duty/<int:pk>/", AssignWorkView.as_view(), name="assignwork"),
+    path("Vehcile/free/<int:pk>/", FreeVehicleView.as_view(), name="free"),
     path("complaint/status/resolved/<int:pk>/", ResolvedView.as_view(), name="resolved"),
     path("services/mechanicalSweeping", views.MechanicalSweeping, name="mechanicalSweeping"),
     path("services/WasteCollection", views.WasteCollection, name="wasteCollection"),
@@ -26,5 +29,6 @@ urlpatterns = [
     path("messages/list", ContactListView.as_view(), name="ContactList"),
     path("add-a-vehicle",  AddVehicle.as_view(), name="add-a-vehicle"),
     path("Manager_panel/", views.ManagerPanel, name="managerPanel"),
+    path("Vehicle/list", VehicleleByZoneListView.as_view(), name="VehcileList"),
 
 ]

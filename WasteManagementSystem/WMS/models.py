@@ -17,12 +17,17 @@ ZONE_CHOICES = [
     ('Nishtar Zone', 'Nishtar Zone'),
 
 ]
+
 STATUS_CHOICES = [
     ('PENDING', 'PENDING'),
     ('PROCESSING', 'PROCESSING'),
     ('RESOLVED', 'RESOLVED')
 ]
+Vehicle_CHOICES = [
+    ('Free', 'Free'),
+    ('On_Duty', 'On_duty'),
 
+]
 
 class Garbage(models.Model):
     garbage_type = models.CharField(max_length=50)
@@ -68,7 +73,9 @@ class Vehicle(models.Model):
     size = models.CharField(max_length=20, null=True)
     color = models.CharField(max_length=10)
     brand = models.CharField(max_length=150)
+    status=models.CharField(choices=Vehicle_CHOICES,max_length=20,default="Free")
     model_no = models.CharField(max_length=50)
+    zone = models.CharField(choices=ZONE_CHOICES, max_length=50, blank=False, null=False,default="Ravi Zone")
     manager_id = models.ForeignKey(Manager, on_delete=models.CASCADE, null=True)
     def get_absolute_url(self):
         return reverse("managerPanel")

@@ -113,7 +113,7 @@ class ResolvedView(View):
 class AddVehicle(CreateView):
     model=Vehicle
     template_name="AddVehicle.html"
-    fields=['name','number','size','color','brand','model_no']
+    fields=['name','number','size','color','brand','model_no','zone']
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super(AddVehicle, self).form_valid(form)
@@ -137,3 +137,26 @@ class ContactListView(ListView):
 """
 def ManagerPanel(request):
     return render (request, 'ManagerPanel.html')
+
+class VehicleleByZoneListView(ListView):
+    model = Vehicle
+    template_name = "ManagerVehicleList.html"
+    def get_queryset(self):
+        manager = Manager.objects.get(user=self.request.user)
+        return Vehicle.objects.filter(zone=manager.zone)
+
+class AssignWorkView(View):
+    def post(self, request, *args, **kwargs):
+        veh_pk = kwargs.get('pk')
+        veh = Vehicle.objects.get(pk=veh_pk)
+        veh.status = 'On Duty'
+        veh.save()
+        return redirect('VehcileList')
+
+class FreeVehicleView(View):
+    def post(self, request, *args, **kwargs):
+        veh_pk = kwargs.get('pk')
+        veh = Vehicle.objects.get(pk=veh_pk)
+        veh.status = 'Free'
+        veh.save()
+        return redirect('VehcileList')
