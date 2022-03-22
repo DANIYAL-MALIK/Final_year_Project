@@ -19,7 +19,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'WMS.apps.WmsConfig',
     'crispy_forms',
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
